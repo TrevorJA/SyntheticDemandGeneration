@@ -33,16 +33,18 @@ For more information on these methods, see the blog post [here](https://waterpro
 
 ### Analyzing synthetic correlation patterns
 [synthetic_correlation_analysis_conditional_expectation_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_correlation_analysis_conditional_expectation_method.py)
-> Quantifies the correlation between synthetic inflow data generated using the mFGN method with synthetic demand using the conditional expectation method. Produces several figures to visualize these patterns and report Pearson correlation values.
+> Quantifies the correlation between synthetic inflow data generated using the mFGN method with synthetic demand using the conditional expectation method. Produces several figures to visualize these patterns and report Pearson correlation values.  
 [synthetic_correlation_analysis_joint_PDF_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_correlation_analysis_joint_PDF_method.py)
 > Quantifies the correlation between synthetic inflow data generated using the mFGN method with synthetic demand using the conditional expectation method. Produces several figures to visualize these patterns and report Pearson correlation values.
 
 ### Additional files
 The following files are necessary modules used during the generation process. 
 [visual_validation.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/visual_validation.py)
-> Contains plotting functions used to produce visuals. 
+> Contains plotting functions used to produce visuals.  
+
 [my_stats_functions.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/my_stats_functions.py)
-> Contains simple standardization functions and matrix transformation functions.
+> Contains simple standardization functions and matrix transformation functions.  
+
 [fix_nonpositive_matrix.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/fix_nonpositive_matrix.py)
 > Used to fix non-positive definite matrices that result from numerical errors. Source: [PyPortfolioOpt](https://pyportfolioopt.readthedocs.io/en/latest/_modules/pypfopt/risk_models.html)
 
