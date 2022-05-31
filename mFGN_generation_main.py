@@ -20,22 +20,11 @@ Reference:
 """
 # Core libraries
 import numpy as np
-import pandas as pd
-import os
-import sys
-import matplotlib.pyplot as plt
-import random
 
 # Load custom functions of interest
-from my_stats_functions import standardize
 from mFGN_generator import FGN_generate
 from visual_validation import plot_FDC_range
 
-# Set directory to current file location
-# Change the current directory to the directory containing this .py
-pname = os.path.abspath(sys.argv[0])
-dname = os.path.dirname(pname)
-os.chdir(dname)
 
 
 ###############################################################################
@@ -43,7 +32,7 @@ os.chdir(dname)
 ###############################################################################
 
 # Historical inflow and demand (18 year shared record)
-historic_inflow = np.loadtxt('./data/historical/historic_inflow.csv', delimiter = ',').transpose()
+historic_inflow = np.loadtxt('./data/historic/historic_inflow.csv', delimiter = ',').transpose()
 historic_demand = np.loadtxt('./data/historic/historic_unit_demand.csv', delimiter = ',').transpose()
 
 
@@ -52,7 +41,10 @@ historic_demand = np.loadtxt('./data/historic/historic_unit_demand.csv', delimit
                 ### Generate synthetic streamflow using mFGN ###
 ###############################################################################
 
-synthetic_inflow, synthetic_standard_inflow = FGN_generate(full_inflow_hist, n_years= 50, standardized = False)
+synthetic_inflow, synthetic_standard_inflow = FGN_generate(historic_inflow, n_years= 50, standardized = False)
+
+# Export
+np.savetxt('./data/synthetic/synthetic_inflow.csv', synthetic_inflow, delimiter = ',')
 
 
 ###############################################################################

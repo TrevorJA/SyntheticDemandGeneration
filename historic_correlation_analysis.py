@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Author: Trevor Amestoy
-
-Date: Spring 2022
+Cornell University
+Spring 2022
 
 Purpose:
     Explores the Historic correlation between inflow and demand at one site.
@@ -11,25 +11,13 @@ Purpose:
 
 import numpy as np
 import pandas as pd
-import os
-import sys
-import statsmodels.api as sm
-import matplotlib.pyplot as plt
 import seaborn as sns
-import random
 from scipy.stats import pearsonr
 
 
-# Set directory to current file location
-# Change the current directory to the directory containing this .py
-pname = os.path.abspath(sys.argv[0])
-dname = os.path.dirname(pname)
-os.chdir(dname)
-
 # load custom functions of interest
-from synthetic_data_transformation import from_sows_to_annuals
-from my_stats_functions import standardize, normalize
-from visual_validation import plot_correlation_map, plot_FDC_range, plot_all_years
+from my_stats_functions import standardize
+from visual_validation import plot_correlation_map
 
 
 
@@ -119,8 +107,8 @@ p3.savefig('./figures/Historic_Irrigation_Joint_Distribution.png')
 annual_historic_corr_structure = np.corrcoef(np.concatenate((historic_standard_inflow, historic_standard_demand), axis = 1), rowvar = False)[52:,0:52]
 
 # Plot historic maps
-plot_correlation_map(annual_historic_corr_structure, './figures/Historic_Annual_Correlation_Pattern', historic_data = True, annual_data = True, annual_standardize = False)
-plot_correlation_map(annual_historic_corr_structure, './figures/Historic_Irrgigation_Correlation_Pattern', historic_data = True, annual_data = False, annual_standardize = False)
+plot_correlation_map(annual_historic_corr_structure, './figures/Historic_Annual_Correlation_Pattern', historic_data = True, annual_data = True)
+plot_correlation_map(annual_historic_corr_structure, './figures/Historic_Irrgigation_Correlation_Pattern', historic_data = True, annual_data = False)
 
 
 
