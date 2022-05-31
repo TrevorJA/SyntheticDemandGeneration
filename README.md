@@ -21,24 +21,30 @@ For more information on these methods, see the blog post [here](https://waterpro
   
 ### Generating synthetic inflow timeseries
 [mFGN_generator.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/mFGN_generator.py)
-> Contains the code used to generate synthetic streamflow using the modified factional gaussian noise (mFGN) method described by Kirsch et al. (2013).
+> Contains the code used to generate synthetic streamflow using the modified factional gaussian noise (mFGN) method described by Kirsch et al. (2013).  
+
+
 [mFGN_generation_main.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/mFGN_generation_main.py)
 > Runs the mFGN generator and saves synthetic streamflow data as a csv file; also plots a comparison of the historic and synethtic flow duration curves. 
 
 ### Generating synthetic demand timeseries
 [synthetic_demand_generation_conditional_expectation_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_demand_generation_conditional_expectation_method.py)
-> Generates synthetic unit demand timeseries for 50 years, using a conditional expectation method based upon historic correlation values. 
+> Generates synthetic unit demand timeseries for 50 years, using a conditional expectation method based upon historic correlation values.  
+
+
 [synthetic_demand_generation_joint_PDF_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_demand_generation_joint_PDF_method.py)
 > Generates synthetic unit demand timeseries for 50 years, by sampling from a joint PDF of the historic inflow-demand data. 
 
 ### Analyzing synthetic correlation patterns
 [synthetic_correlation_analysis_conditional_expectation_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_correlation_analysis_conditional_expectation_method.py)
 > Quantifies the correlation between synthetic inflow data generated using the mFGN method with synthetic demand using the conditional expectation method. Produces several figures to visualize these patterns and report Pearson correlation values.  
+
 [synthetic_correlation_analysis_joint_PDF_method.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/synthetic_correlation_analysis_joint_PDF_method.py)
 > Quantifies the correlation between synthetic inflow data generated using the mFGN method with synthetic demand using the conditional expectation method. Produces several figures to visualize these patterns and report Pearson correlation values.
 
 ### Additional files
-The following files are necessary modules used during the generation process. 
+The following files are necessary modules used during the generation process.  
+
 [visual_validation.py](https://github.com/TrevorJA/SyntheticDemandGeneration/blob/main/visual_validation.py)
 > Contains plotting functions used to produce visuals.  
 
